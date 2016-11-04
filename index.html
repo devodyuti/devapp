@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>India Neighbourhood Map</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+<style>
+html,
+body {
+	font-family:Arial, sans-serif;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+#map {
+	bottom:0px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+
+}
+.col-md-2 {
+	margin-top:30px;
+	position: relative;
+	max-width: 300px;
+	
+}
+
+.gm-style-largeInfowindow {
+max-width: 100px; 
+min-height: 150px;
+}
+
+
+
+</style>
+</head>
+<body>
+		<div id = "map"></div></div>
+  		<!--<button class="cross">&#735;</button>-->
+		<div class = "col-md-2">
+			
+			<input id = "search-engine" type="text" data-bind="value: query, valueUpdate: 'keyup'" placeholder="search here" autocomplete="off">
+		<!--<input id = "search-engine" type="search" data-bind="valueUpdate: myfunction" placeholder="search here" autocomplete="off">-->
+			<ul id = "unordered-list" data-bind = "foreach: places, foreach: keyup">
+				<li><a href="#" class = "listed-items" data-bind = "text: $data, click: $parent.openinfo, event: { mouseover: $parent.toggle1, mouseout: $parent.toggle2}"></a>
+				</li> 
+			</ul>
+				
+		</div>	
+
+		<script src="js/jQuery.js"></script>
+    	<script src="js/knockout.js"></script>
+    	<script src="js/app2.js"></script>
+    	<script async defer
+      		src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&key=AIzaSyAI0YEPZu8bQ72fBc_SJx5xq7u8ECI5Vuo&v=3&callback=initMap"
+      		onerror="googleError()"></script>
+
+</body>
+</html>
